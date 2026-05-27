@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>프런트엔드 개발자 지원서
+        </title>
+    </head>
+    <body>
+        <div>
+
+            <form action="./ex2.php" method="post">
+                <fieldset>
+                    <h1>프런트엔드 개발자 지원서</h1>
+                    <p>
+                        HTML,CSS 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을 찾습니다.
+                    </p>
+                    <hr>
+                    <p>
+                        개인정보<br>
+                        <label for="user_name" >이름</label>
+                        <input type="text" id="user_name" name="user_name" placeholder="공백없이 입력하세요"><br>
+                        <label for="user_tel"> 연락처</label>
+                        <input type="tel" id="user_tel" name="user_tel"><br>                        
+                    </p>
+
+
+                    <p>
+                        지원분야<br>
+                        <input type="radio" id="web_pub" name="apply_field" value="web_pub">
+                        <label for="web_pub">웹 퍼블리싱</label><br>
+                        <input type="radio" id="web_app" name="apply_field" value="web_app">
+                        <label for="web_app">웹 애플리케이션 개발</label><br>
+                        <input type="radio" id="product" name="apply_field" value="product">
+                        <label for="product">개발환경개선</label><br>
+                    </p>
+
+                    <p>
+                        지원동기<br>
+                        <textarea name="user_text" id="user_text" rows="5" cols="40" placeholder="본사 지원동기를 간략히 써주세요"></textarea>
+                    </p>
+                    <input type="submit" value="지원하기">
+                    <input type="reset" value="취소하기">
+
+                </fieldset>                    
+            </form>
+
+
+
+        </div>
+    </body>
+</html>
