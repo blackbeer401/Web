@@ -1,0 +1,54 @@
+/* 기본 문법은 매우 간단하다 = 선택자{속성 : 값;} */
+
+/* 선택자의 종류들을 알아봐야한다. */
+
+/* 1. 타입(요소) 선택자 */
+h2{color: red;}
+p{color: blue; font-family: serif;}
+p{font-size: 16px; color: green;} /* 같은속성을 또 지정하면 마지막 지정 값으로 적용됨 */
+
+/* 2. 전체선택자 */
+*{font-style: italic; color: yellow;} /* 선택자마자 적용 우선순위가 존재한다. [개별선택자가 더 우선시 된다] */
+
+/* 3. 아이디 선택자 (선택자중에 우선순위가 가장 높다 -하나만 특정해서 잡기에) */
+#p1{color: blue;}
+
+/* 4. 클래스 선택자 (id 선택자 다음으로 우선순위가 높다.) */
+.aa{color: violet;}
+
+/* 요소 + 클래스 선택자 */
+/*p요소 중에서 클래스명이 aa인 요소 선택  */
+
+p.aa{background-color: yellow;}
+p#p1{font-size: 18px;}/* 되긴하는데 바보같은짓임 id 는 어짜피 하나이기 때문에 */
+
+/* 5. 선택자 그룹(다중선택자) */
+li,a{color: gray;}
+
+/* 6.자식, 자손 선택자 */
+#kk>p{color: black;}
+#kk p {color: lime;}
+
+/* 주의할 선택자 사용모습 */
+p.aa{}/*p요소중에서 클래스명이 aa 인 녀석*/
+p .aa{} /* p 요소의 자손 중에서 클래스 명이 aa 인 녀석*/
+
+/* 조금 더 복잡한 선택자 모습 */
+#ss ul.gg>li{background-color: aqua;}
+
+/* 7.속성선택자 */
+p[class]{font-size: 30px;}/* p요소 중에서 class라는 속성이 부여된 녀석 */
+div[id="ss"]{font-weight: bold;}/*id 속성값이 ss 인 div 요소*/
+
+/* 8.의사(pseudo-class) 선택자 (가짜선택자)-추후 수업예정 */
+a:link{color: blue;}
+a:visited{color: brown;}
+a:hover{color: green;}
+a:active{color: red;}
+
+#ss ul li:first-child{color: red;}
+#ss ul li:last-child{color:blue;}
+#ss ul li:nth-child(2){color: green;}
+
+/* nth 를 수식으로 .. 적용 할 수도 있음 */
+#ss ul li:nth-child(2n+1){background-color: lightgreen;}

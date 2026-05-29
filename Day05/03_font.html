@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>font</title>
+        <!-- 내부스타일시트 -->
+        <style>
+            /* 이영역은 css언어로 작동한다. */
+
+            /* 1.폰트(글꼴)지정 */
+            p{font-family: 'Times New Roman', Times, serif;}
+            p{font-family: 'blackadder ITC', monospace;}
+            p{font-family: '휴먼옛체',serif;}
+
+
+            /* 마지막 글꼴은 서체로 마무리해야한다(다른 글꼴들이 없을 수 있으니) */
+            p{font-family: serif;}
+            p{font-family: sans-serif;}
+            p{font-family: monospace;}
+            p{font-family: fantasy;}
+            p{font-family: cursive;}
+
+            /* 사용자의 플랫폼 환경에 상관없이 같은글꼴이 보여지려면 */
+            /* 본인만의 글꼴을 만들어지정 해야한다. 이를 웹 폰트라고 부름  */
+            /* 별도의 폰트 파일(.ttf)이 필요하다 */
+
+            /* 나만의 웹폰트를제 제작 : 나만의 폰트를 만든다. */
+            @font-face{
+                font-family:'my font';
+                src: url("./font/billabong.otf");
+            }
+            p{font-family: 'my font',monospace;}
+
+            @font-face {
+                font-family: 'my font2';
+                src: url("./font/Swagger.ttf");
+            }
+            /* 웹 폰트를 p 요소에 적용 */
+            p{font-family: "my font2",monospace;}
+
+            /* 책에는 google font 아이콘 폰트등을 적용하는 예제도 있음. */
+
+            /* 2. 글씨 크기 */
+            p{font-size: 16px;}
+            p{font-size: 150%;}/* 원래폰트 사이즈의 150% 크기 */
+            p{font-size: 1.5em;} /* 원래 폰트 사이즈의 1.5배(권장단위) */
+            p{font-size: medium;} /*키워드로도 가능함*/
+            p{font-size: small;}
+            p{font-size: large;}
+
+            /* 무료폰트 사이트 : 산돌구름 , 눈누 */
+
+            /* 3. 볼드체 만들기 */
+            p{font-weight: bold;}
+            p{font-weight: normal;}
+
+            /* 4.이탤릭체 */
+            p{font-style: italic;}
+            p{font-style:normal ;}
+
+            /* 1~4까지의 속성을 한번에 축약으로..[단.. 작성순서가 있다.weight/style-> size -> family] 띄어쓰기로 구분한다 */
+            p{font:bold italic 1.5em "my font2",serif ;}
+    
+            /* 필요한것만 순서대로 써도된다. */
+            p{font: 1.3em "my font", sans-serif ;}
+
+            /* text style */
+            /* 1.텍스트 정렬 (수평정렬)*/
+            p{text-align: right;}
+            p{text-align: center;}
+            p{text-align: justify;}/* 양쪽 정렬 */
+
+            /* 2.대소문자 변환(영어만 가능) */
+            p{text-transform: lowercase;}
+            p{text-transform: uppercase;}
+            p{text-transform: capitalize;}
+            p{text-transform: none;}
+
+            /* 3.텍스트에 줄긋기 */
+            p{text-decoration: overline;}
+            p{text-decoration: underline;}
+            p{text-decoration: line-through;}
+            p{text-decoration: none;}
+
+            /* 4. 텍스트에 그림자효과 */
+            p{text-shadow: 5px 2px 5px red;} /* x축 y 축 떠있는정도 색상 */
+
+            /* 5.워드 랩 */
+            p.aa{
+                width: 5em;
+                border: 1px solid blue;
+                word-wrap: break-word;
+            }
+
+            /* 6.다중컬룸 (킨) */
+            p.bb{
+                column-count: 2;
+                column-gap: 80px;
+                column-rule: 4px dotted green;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <p>Hello world</p>
+        <p>한글은 어떠한가</p>
+
+        <p class="aa">
+            한글은 전혀 문제없이 자동으로 워드 랩 됩니다.
+            asdasdadqwnrnsskasdmvilsisdasd
+        </p>
+        <p class="bb">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem maxime sint neque harum perferendis rerum perspiciatis ex voluptas, nostrum voluptates accusantium porro delectus. Vel repellat molestiae recusandae doloribus quae. Iure illo maiores eius, quam esse eveniet atque tempore doloremque omnis corporis delectus vero, reiciendis nobis, quae accusamus repudiandae expedita officia quia magni sit! Odit nostrum iste repellat rem necessitatibus ex. Et optio recusandae adipisci temporibus perspiciatis nihil fuga tempore quam quia sed ab laborum reiciendis vitae, facilis dolorum impedit repellat enim velit molestiae fugiat quae. Provident, error ad sequi temporibus adipisci minus architecto laboriosam magni officia neque hic beatae ipsam ratione, inventore dolore harum aspernatur quas. Molestias natus ad, incidunt, voluptatibus harum totam suscipit reiciendis dolores enim velit esse, placeat sit. Quae cum nesciunt officiis amet corporis, repellendus numquam tenetur dolore omnis beatae tempore obcaecati illo? Eius, et. Explicabo fugit, architecto a nemo, obcaecati id nisi nam pariatur, voluptates ducimus harum laborum possimus libero iusto. Earum harum non explicabo doloribus ea quisquam, deserunt vel tenetur fugit nostrum obcaecati quaerat a commodi voluptatem ullam. Repellendus ut cupiditate similique corporis velit in. Alias voluptatibus aliquid corrupti sint ipsa reiciendis atque cumque! Iste obcaecati voluptatum officia recusandae laudantium, eveniet vel atque ipsum alias aut, molestias nobis amet. Recusandae exercitationem officiis distinctio nobis repellendus aspernatur labore quos eveniet voluptatum. Cupiditate similique dicta accusantium vero voluptatum exercitationem. Accusantium inventore quos, maxime quam harum, obcaecati dicta id, esse illum deleniti non ratione? Sit quis cum ab mollitia enim ex, molestias earum dolorum eaque, quos doloribus, perspiciatis explicabo amet! Molestias nam quia ipsum possimus necessitatibus laboriosam nulla veniam maiores natus vitae earum iusto magnam labore eum quam, sed, vero fugiat corporis dignissimos cum? Nisi nulla magni reprehenderit! Alias quia voluptate in incidunt error odit corrupti, repellendus neque, dolores eum odio, quas sed natus repudiandae fugit atque ducimus.
+            
+        </p>
+
+        <hr>
+        <!-- text-aline 은 글씨 정렬이 아니라 자식요소의 수 (수평)도 정렬됨 -->
+         <p style="text-align: center; background-color: aqua;">
+            <a href="">naver</a>
+         </p>
+
+         <!-- 단, 인라인 요소안의 콘첸츠를 text-align으로 수평정렬되지 않음..  -->
+        <span style="background-color: antiquewhite;text-align: center;">
+            hello
+
+        </span>
+
+        <!-- 인라인 요소를 가운데에 배치하려면  -->
+         <div style="text-align: center;">
+            <span>
+                hello
+            </span>
+         </div>
+
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>table</title>
+        <style>
+            table{
+                width: 300px;
+                border: 2px solid black;   
+                /* 내부실선이 2줄로그려지는것이 싫다면.. 두 선을 합칠 수 있다. */
+                border-collapse: collapse;
+                /* 안에 있는 모든 것들의 수평정렬을 가운데로 */
+                text-align: center;
+            }
+            th,td{
+                border: 1px solid black ; padding: 10px 5px  ;/*위 아래 여백 10px 좌우 여백 5px*/
+            }
+            /* 제목 줄 칸들의 배경색 지정하기 */
+            th{background-color: green; color: white;}
+
+            /* 짝수 줄만 별도의 배경색 지정하려면? */
+            tr:nth-child(2n){background-color: gainsboro;}
+
+            /* 첫번째 칸에만 너비를 지정하려면? */
+
+            td:first-child{width: 40%;}
+
+            /* 제목줄에 하단 아래부분 경계선을 적색으로 칠해보기 */
+            th{border-bottom: 1.5px double red;}
+
+            /* 직접 만들지는 않았지만 ... 그래서 보이진 않지만 실제table안에 존재하는 자식요소(tbody)가 있음 */
+            table>:nth-child(1){border: 10px solid blue;}
+
+            /*  그래서 테이블 작업할때에는 자식선택자 대신 자손 선택자를 사용하길 권장한다. */
+            table>tr{color: red;}/* 무의미하다 테이블의 자식 중엔 tr이 없다보니 */
+            table tr{color: pink}
+
+        </style>
+
+    </head>
+
+    <body>
+        
+
+        <table>
+            <tr>
+                <th>이름</th>
+                <th>이메일</th>
+            </tr>
+            <tr>
+                <td>손흥민</td>
+                <td>aaa@gamil.com</td>
+            </tr>
+            <tr>
+                <td>김민재</td>
+                <td>ccc@gamil.com</td>
+            </tr>
+            <tr>
+                <td>김철수</td>
+                <td>ddd@gamil.com</td>
+            </tr>
+            <tr>
+                <td>이강인</td>
+                <td>ddd@gamil.com</td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+<!-- 책 6~7 챔터까지 완료 -->
+ <!-- 책읽고 예제 모두 따라 써보기 -->
+  <!-- 각챕터의 되새김문제 풀어보기 -->
