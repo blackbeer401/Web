@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+        <title>elem size</title>
+    </head>
+    <body>
+        
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio nostrum ex consectetur, maiores optio iusto excepturi inventore iure tempore, error architecto. Numquam consequuntur rerum amet, at in animi quaerat maxime?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt recusandae deserunt nulla magni rerum laudantium cum, doloribus dolor accusamus ab adipisci saepe. Animi facere distinctio explicabo totam optio ex nam!
+        </p>
+        <style>
+            p{
+                background-color: yellow;
+                min-width: 600px;
+                min-height: 200px;
+            }
+        </style> 
+
+        <hr>
+
+        <!-- box size : width 는 요소의 너비가 아니라 콘텐츠의 너비이다 이걸 주의히야 한다. -->
+
+        <div>
+            <input type="text" placeholder="글씨를 입력하세요">
+        </div>
+
+        <style>
+            div{
+                width: 300px;
+                border: 1px solid black;
+                height: 30px;
+            }
+            input{
+                width: 100%; /* 원래 width는 콘텐츠의영역 패딩과 경계선구께는 제외돔 */
+                padding: 5px 10px;
+                            /* 박스의 너비width를 콘텐츠+패딩+경계선까지 포함시키도록.. */
+
+                 box-sizing: border-box;
+
+            }
+
+  
+        </style>
+    </body>
+</html>

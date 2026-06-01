@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>layout</title>
+        <style>
+            /* 디스플레이 속성실습 */
+            #aa{display: inline; width: 300px;}
+            #aa{display: inline-block; width: 300px;}
+
+            img{display: block;}
+            #kk{display: none;}
+            /* #kk{visibility: hidden;} display hidden 은 이제 쓰지 않는다. */
+
+        </style>
+    </head>
+    <body>
+        
+        <!-- display요소 연습 -->
+        <p id="aa">hello world</p>
+        <a href="">good day</a>
+        <strong>good morning</strong>
+        <img src="./image/border.png" alt="image">
+
+        <hr>
+        <ul>
+            <li>aaa</li>
+            <li id="kk">bbb</li>
+            <li>ccc</li>
+        </ul>
+
+
+        <hr>
+
+        <!-- 블럭요소와 인라인요소를 혼합하여 사용할 때 고려해야 할 부분들 -->
+        
+        <!-- 블럭요소 안에 인라인 요소를 넣을수 있다. -->
+        <div style="background-color: tomato; border: solid; padding: 5px;">
+            Nice <em>aaaa</em> world
+        </div>
+
+        <!-- 인라인 요소안에 블럭요소는 넣으면 안됨. 에러는 아닌데 이상해짐 -->
+        <span style="background-color: teal; border: solid;padding: 5px;">
+            nice <p>aa</p>world
+        </span>
+
+        <!-- 블럭요소 안에 다른 블럭요소를 넣을수 있다 -->
+        <div style="background-color: azure; border: solid; padding: 5px;">
+            nice <p>aaaa</p>world
+        </div>
+
+        <!-- 블럭안에 같은 블럭요소를 넣으면 .. 조심.. -->
+        <p style="background-color: aqua; border: solid; padding: 5px;">
+            nice <p>aaaa</p>world
+        </p>
+
+        <h2 style="background-color: azure; border: solid; padding: 5px;">
+            nice <h2>aaaa</h2>world
+        </h2>
+
+        <!-- div 요소 안에 div 요소가 존재하는것은 가능하다. -->
+        <div style="background-color: aquamarine; border: solid; padding: 5px">
+            nice <div>aaa</div> world
+
+        </div>
+
+        <hr>
+
+        <!-- position 속성  & 위치지정 속성 left,right,top, bottom-->
+        <div class="region">
+            <p id="p1">block #1 </p>
+            <p id="p2">block #2 </p>
+            <p id="p3">block #3 </p>
+        </div>
+        <style>
+            .region{
+                background-color: black;
+                position: relative;
+
+            }
+            #p1{
+                background-color: aqua;
+                width: 200px;
+                height: 50px;
+            }
+            #p2{
+                position: static; /* 정적위치 - 디폴트 값 원래 놓여져야 할 위치에놓여진다 (겹치지 않는다.)*/
+                position: relative; /* 상대위치 - 원래 놓여질 위치에서 위치지정 속성값을 반영한다. */
+                position: absolute; /* 절대위치 - 웹문서의 좌상단을 기준으로 배치 - 앱솔루트 쓸때 위치 지정 안하면 아예 안보여진다 위치지정이 필수 */
+                /* 절대위치 사용시 부모요소의 position이 static이 아니면 부모요소의 좌상단을 기준으로 함 */
+                position: fixed; /* 고정위치 - 웹브라우저 창을기준으로 배치  */
+
+
+                /* 위치지정 속성 (포지션이 고정되어 있는  stayic에서는 무시된다)*/
+                /*  */
+                left: 50px;
+                top: 30px;
+
+
+                background-color: yellow;
+                width: 150px;
+                height: 50px;
+            }
+            #p3{
+                background-color: lightgreen;
+                width: 200px;
+                height: 50px;
+            }                        
+        </style>
+
+    </body>
+</html>

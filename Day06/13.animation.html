@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>animation</title>
+        <style>
+            #aa{
+                background-color: green;
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+
+                position: absolute;
+
+                /* 애니매니션 적용*/
+                animation-name: bounse;
+                animation-duration: 3s;
+                animation-iteration-count: 5;
+                animation-timing-function: ease;
+            }
+
+            /* 애니매이션장면들 만들기 */
+            @keyframes myanim
+            {
+                0%{left: 0px; top: 0px;}
+                50%{left: 200px; top: 0px;}
+                100%{left: 0px; top: 0px;}
+            }
+            @keyframes bounse
+            {
+                0%,100%{bottom: 0px; left: 0px;
+                    nimation-timing-function: ease-out;}
+                50%{
+                    bottom: 200px;
+                    animation-timing-function: ease-in;
+
+                }
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div id="aa"></div>
+    </body>
+</html>
+
+<!-- 8챕터~ 9챕터 &14챕터  -->
+ <!-- 수행과제  -->
+  <!-- 3개 챕터 내용 다 읽고 예제 모두 따라해보기 -->
+   <!-- 각챕터마다 되새김 문제 풀기 -->
+    <!--  -->

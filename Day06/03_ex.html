@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ex</title>
+
+        <style>
+
+            #header{
+                background-color: #CCCCCC;
+                text-align: center;
+                padding: 3em 0em;
+
+                background-image: url('./image/paris.jpg');
+                background-size: auto;/*기본값*/
+                background-size: contain;
+                background-size: cover;
+
+                color: white;
+            }
+
+            ul{
+                list-style: none;
+                border-top: 1px solid red;
+                border-bottom: 1px solid red;
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            ul li{
+                display: inline;
+                padding: 0 10px;
+                letter-spacing: 0.25em;
+
+            }
+
+            ul li a{text-decoration: none; color: black;}
+            ul li a:hover{text-decoration: underline;}
+
+
+        </style>
+    </head>
+    <body>
+        
+        <div id="header">
+            <h1>Homepage</h1>
+            <p>this is my homepage</p>
+        </div>
+
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">BLOG</a></li>
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">CONTACT</a></li>
+
+        </ul>
+    </body>
+</html>

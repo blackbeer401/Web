@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>over flow</title>
+
+        <style>
+            .aaa p{
+                background-color: lawngreen;
+                width: 200px;
+                height: 50px;
+
+            }
+
+            .aaa{
+                border: 2px solid black;
+                width: 300px;
+                height: 100px;
+
+                overflow: visible;/* 이게 기본값 */
+                overflow: hidden;
+                overflow: scroll;
+                overflow: auto;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="aaa">
+            <p >block1</p>
+            <p>block2</p>
+            <p>block3</p>
+            <p>block4</p>
+            <p>block5</p>
+        </div>
+
+    </body>
+</html>
