@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>semantic</title>
+        <style>
+            #wrapper{
+                width: 680px;
+                border: 1px solid black;
+                margin-left: auto;  margin-right: auto;
+            }
+            header{
+                background-color: antiquewhite;
+                width: 100%;
+                padding: 3em;
+                box-sizing: border-box;
+
+            }
+            nav{
+                background-color: yellow;
+                width: 100%;
+                padding: 1em;
+                box-sizing: border-box;
+            }
+            main{
+                background-color: azure;
+                padding: 1em;
+               display: table-cell;
+               box-sizing: border-box
+            }
+            aside{
+                background-color: aquamarine;
+                padding: 1em;
+                display: table-cell;
+                box-sizing: border-box;
+                width: 150px;;
+            }
+            footer{
+                color: white;
+                background-color: black;
+                padding: 1em;
+                text-align: center
+            }
+            nav ul{ list-style: none;}
+            nav ul li{display: inline-block;}
+            nav ul li a{text-decoration: none; color: blue;}
+            nav ul li a:hover{text-decoration: underline; color: red;}
+        </style>
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>MY Homepage</h1>
+                <p>this is my sementic page</p>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="">뉴스페이지</a></li>
+                    <li><a href="">연예</a></li>
+                    <li><a href="">스포츤</a></li>
+                </ul>
+                
+            </nav>
+            <main>
+                <section>
+                    <article>
+                        <h3>HTML5</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nam debitis beatae doloribus eos labore, dignissimos voluptatibus iste quo, ipsam et quia sint quisquam hic optio, facere nobis dolore ad!</p>
+                    </article>
+                    <article>
+                        <h3>CSS</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga fugiat similique ratione excepturi doloremque sed pariatur in corporis, maxime earum assumenda deleniti quaerat mollitia obcaecati velit, veritatis saepe harum? Eaque.</p>
+                    </article>
+                </section>
+            </main>
+            
+            <aside>
+                <input type="text" placeholder="검색어 입력">
+                <figure>
+                    <img src="../Day06/image/apple.jpeg" alt="apple">
+                    <figcaption>사과</figcaption>
+                </figure>
+            </aside>
+            <footer>
+                <h5>카ㅠㅣ라이트 &copy; MBCA</h5>
+            </footer>
+
+        </div>
+    </body>
+
+</html>
