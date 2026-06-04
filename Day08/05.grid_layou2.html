@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid layout2</title>
+
+    <style>
+        /* 특정 자식요소들의 특정 영역별명을 지정하고 이 병명으로 grid를 차지하는 위치를 지정 */
+
+        header{grid-area: aa;}
+        nav{grid-area: bb;}
+        main{grid-area: cc;}
+        aside{grid-area: dd;}
+        footer{grid-area: ee;}
+
+        #wrap>*{
+            background-color: aquamarine;
+            text-align: center;
+            padding: 20px 0px;
+            font-size: 30px;
+            border: 1px solid black;
+
+        }
+        #wrap{
+            display: grid;
+            grid-template-areas:
+            'aa aa aa aa aa' 
+            'bb cc cc cc dd'
+            'ee ee ee ee ee';
+            grid-template-rows:  auto 300px auto;
+        }
+
+        header{
+            display: flex;
+            flex-direction:  row;
+            justify-content: space-between;
+        }
+        
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div>
+        <h2>GRID area layout구조</h2>
+
+        <div id="wrap">
+            <header> 
+                <div>LOGO</div>
+                <div>TITLE</div>
+                <div>OPTION</div>
+            </header>
+            <nav>MENU</nav>
+            <main>MAIN</main>
+            <aside>SIDE</aside>
+            <footer>FOOTER</footer>
+
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+</html>

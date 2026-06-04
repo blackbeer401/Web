@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07.attribute_selector</title>
+</head>
+<body>
+
+    <ul>
+        <li><a href="https://www.naver.com" target="_blank">naver</a></li>
+        <li><a href="https://www.daum.net" target="_self">daum</a></li>
+        <li><a href="https://www.google.com" target="_self">google</a></li>
+    </ul>
+    <style>
+        a[target='_blank']{
+            background-image: url(./icon/new-tab.png);
+            background-position: right;
+            background-size: 14px;
+            background-repeat: no-repeat;
+            padding-right: 20px;
+        }
+    </style>
+    
+    <hr>
+
+    <!-- input 요소중 타입이 radio 를 찾는데 이때 선택된 요소들만 찾기 -->
+     
+
+    <input type="radio" name="nation" value="korea" id="rb1" checked>
+    <label for="rb1">대한민국</label>
+    <input type="radio" name="nation" value="japan" id="rb2">
+    <label for="rb2">일본</label>
+    <input type="radio" name="nation" value="china" id="rb3">
+    <label for="rb3">중국</label>
+
+    <style>
+        /* 라디오 버튼 중에서 체크된 녀석중에서 바로 다음 레이블 요소 */
+        input[type='radio']:checked+label{
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+
+
+
+<hr>
+    <!-- 속성의 값이 특정 글씨로 시작되는 요소선택  -->
+    <a href="" title="네이버로 이동">네이버</a>
+    <a href="" title="검색도구 구글로 이동">구글</a>
+    <a href="" title="다음으로 이동">다음</a>
+
+    <style>
+        a[title^='네이버']{
+            color: green;
+        }
+    /* 글씨에 일부가 포함 되어 있을때 선택자 */
+        a[title*='구글']{
+            color: blue;
+        }
+        a[title^='다음']{
+            color: magenta;
+        }
+
+    </style>
+    
+    <hr>
+    <!-- 특정 글자로 끝나면? -->
+    <a href="./aaa.hwp">한글 파일 다운로드</a>
+    <a href="./aaa.xlsx">엑셀 파일 다운로드</a>
+    <a href="./aaa.zip">압축 파일 다운로드</a>
+
+    <style>
+        a[href$='xlsx']{
+            font-weight: bold;
+            color: tomato;
+        }
+    </style>
+    <!-- 특정속성값에 특정 단어가 포함되었는가? -->
+    <p class="aa bb cc">hello</p>
+    <p class="aa bb">nice</p>
+    <p>good</p>
+
+    <style>
+        .aa{color: blue;}
+        .bb{font-weight: bold;}
+        .cc{font-style: italic;}
+
+        p[class='bb']{font-size: 2rem;} /* 대상자 없음.. */
+        p[class~='bb']{font-size: 2rem;} 
+        p[class~='b']{background-color:bisque;} /* 단어 찾기*/
+        p[class*='b']{border:solid} /*글자 찾기 */
+    </style>
+
+
+</body>
+</html>

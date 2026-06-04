@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0px; margin: 0px;}
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            padding: 3rem;
+            padding-top: 10px;
+        
+       
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(3, 100px);
+            background-color: black;
+            color: black;
+            grid-template-areas: 
+            "a a b b"
+            "a a c d"
+            "e e c d";
+        }
+        #container div{
+            margin: 10px;
+            background-color: yellow;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #c1{
+            grid-area: a;
+        }
+        #c2{
+            grid-area: b;
+        }
+        #c3{
+            grid-area: c;
+        }
+        #c4{
+            grid-area: d;
+        }
+        #c5{
+            grid-area: e;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="c1">1</div>
+        <div id="c2">2</div>
+        <div id="c3">3</div>
+        <div id="c4">4</div>
+        <div id="c5">5</div>
+    
+    </div>
+    
+</body>
+</html>
