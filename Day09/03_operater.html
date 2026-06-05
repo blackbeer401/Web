@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator</title>
+
+    <script>
+        // 1.산술연산자.
+        document.write(10+4)
+        document.write('<br>')
+        document.write(10-4)
+        document.write('<br>')
+        document.write(10*4)
+        document.write('<br>')
+        document.write(10/4)
+        document.write('<br>')
+
+        //파이썬에 있던 목을 구하는 연산자 //는 없음 나머지 연산자 % 는 있음.
+        //JS에서 몫을 구하고 싶다면 나눗셈의 결과에서 소수점 아래를 날리면됨..
+        document.write(parseInt(10/3));
+        document.write('<br>')
+        document.write(10%3)
+        document.write('<br>')
+
+        //0나눗셈 (파이썬에서는 에러 js에서는 무한대라고 출력됨)
+        document.write( 10/0 )
+        document.write('<hr>')
+
+
+        // 2. 비교연산자
+        var a = 10;
+        document.write(a>5)
+        document.write('<br>')
+        document.write(a<5)
+        document.write('<br>')
+        document.write(a>=5)
+        document.write('<br>')
+        document.write(a<=5)
+        document.write('<br>')
+        document.write(a==5)
+        document.write('<br>')
+        document.write(a!=5)
+        document.write('<br>')
+        document.write('<hr>')
+
+        //특이한 비교연산
+
+        var b = 10;
+        var c = "10"; 
+        var d = 10.0;
+
+        //js == 연산자는 자료형은 구분하지 않는다.
+        document.write(b==c)
+        document.write('<br>')
+        document.write(b==d)
+        document.write('<br>')
+        //그래서 자료형과 값 모두를 비교해주느 연산자
+
+        document.write(b===c)
+        document.write('<br>')
+
+        document.write(b===d)// 정수 실수 모두 number 타입이다.
+        document.write('<br>')
+        document.write('<hr>')
+
+
+        //파이썬과 다른 연산규칙
+        age = 35
+        document.write( 20< age <30); //이거 트루로 나옴 그 이유는 파이썬과 다르게 한번에 하나씩 연산하다보니 20 < 35 는 맞으니깐
+        document.write('<br>')
+        // js 에서는 0 '' undefined 를 제외한 모든 값을 true로 인식하며 true 역시 1로 인식함 false는 0으로 인식 
+        document.write(true==1)
+        document.write('<br>')
+        document.write(false==0)
+        document.write('<br>')
+        document.write(true<10)
+        document.write('<hr>')
+
+        //r그래서 js 에서는 비교연산을 연달아 작성하지 않는다.
+
+        // 그럼 2개 이상의 조건을 비교해야 한다면?  and(&&) or(||) 같은 논리연산자를 사용한다.
+
+
+        // 3.논리 연산자[and(&&), or(||), not(!)]
+        var age =9;
+        var height = 150;
+        //놀이동산 이용제한 조건 비교 (나이가 10살이상, 키가 140이상)
+        if (age >= 10 &&height >= 140){
+            document.write('놀이동산 이용 가능')
+        }
+        // 두 조건 중 하나라도 ok 면?
+        if ( age >=10 || height >= 140){
+            document.write('조건 중 하나 이상 해당합니다.<br>')
+        }
+        //성인이 아니면?이라는 조건을 문법적으로 쓸때..
+
+        if (!(age>=20)){
+            document.write('no adult')
+        }
+
+
+        document.write('<hr>')
+
+
+        //4. 비트연산자 [많이 사용 안함]
+        // 숫자 연산을 2진수로 변환하여 각 비트자리 끼리 연산(and(&), or(|), xor(^),..)
+        document.write(10&2)
+        document.write('<hr>')
+
+        document.write(10|2)
+        document.write('<hr>')
+
+        document.write(10^2)
+        document.write('<hr>')
+
+        //시프트 연산자 - 비트의 자리를 이동
+        document.write(10 <<2)
+        document.write('<br>')
+        document.write(10>>2)
+        document.write('<br>')
+
+        // 시프트 연산자는 부호는 움직이지 않는다. 부호자리
+        // >>> 이런 시프트 연산자는 부호자리고 움직인다.
+        // 첫번째 비트자리가 부호를 표시하는 자리이며 0 이면 양수 1이면 음수
+
+        var g= -16;
+        document.write(g>>2)// 부호는 그대로음수
+        document.write('<hr>')
+        document.write(g>>>2)// 부호가 움직여서 . 양수가 되고 큰수가됨
+        document.write('<hr>')
+
+
+        // .write() 출력 기능에 너무 큰 수치값을 쓰면 알아서 지수 표현식으로 출력하기도함
+        document.write(12345689123456789123456791234567891234567889)
+        document.write('<hr>')
+        document.write(Number.MAX_VALUE)// 최대 표현 가능 숫자
+        document.write('<hr>')
+
+
+        // 5. 복합대입연산자9산수 + 대입
+        var num = 10;
+        document.write(num +'<br>')
+
+        num = num +1;
+        document.write(num +'<br>')
+
+        num += 1;
+        document.write(num +'<br>')
+
+        num +=3
+        document.write(num +'<br>')
+
+
+        num /=5
+        document.write(num +'<br>')
+
+        //6.증감연산자 (변수값의 1증가 도는 감소를 간결하게 해주는 연산자)
+        num=10
+        num+=1
+        document.write(num +'<br>')
+
+        num++ //1 증가를 짧게
+        document.write(num +'<br>')
+
+        // 연산자 위치를 먼저 써도됨
+        ++num 
+        document.write(num +'<br>')
+
+        //1 씩 감소
+        document.write(num +'<br>')
+
+        // num ++ 선 출력 후 연산 
+        // ++ num 선 연산 후 출력
+
+        num=10;
+        document.write(num++)
+        document.write('<br>')
+        document.write(num)
+        document.write('<br>')
+
+        num=10;
+        document.write(++num)
+        document.write('<br>')
+        document.write(num)
+        document.write('<br>')
+        document.write('<hr>')
+
+
+        // 7. 삼항연산자.(파이썬과 문법이나 작성위치가 살짝 다름)
+        var x =5;
+        var y =(x>10)? 'A':'B'; //조건이 참이면 앞에거 거짓이면 뒤에꺼
+        document.write(y)
+        document.write('<br>')
+
+        //응용하면?[점수에 따른 학점 계산]
+        var score = 75;
+        var grade = (score>=90)?'A':(score>=80)?'B':(score>=70)?'c':(score>=60)?'D':'F';
+
+        document.write(grade + '학점')
+        document.write("<hr>")
+
+        //연산 할 대 추가로 알아야 할 형변환 기능(함수)
+        //프로그램에서 사용자의 입력은 무조건 문자열로 입력된다.
+        // 사용자 입력은 html 의 input 요소를 사용해야 하지만 시간상 간단하게다이얼로그를보여주고 입력받기.
+
+        var age = prompt('나이를 입력하세요')
+        document.write('나이보다 3살위 :' + (age +3) + '<br>')
+        // 문자열을 수치형으로 변환하는 기능 
+        age = parseInt(age)
+        document.write('나이보다 3살위 :' + (age +3) + '<br>')        
+        
+        // 당연히 변환 가능한 문자열모양이여야 함
+        document.write(parseInt("486")+ '<br>')
+        document.write(parseInt("aaa")+ '<br>')
+
+        document.write(parseInt("3.14")+ '<br>')
+        document.write(parseFloat("3.14")+ '<br>')
+        
+
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

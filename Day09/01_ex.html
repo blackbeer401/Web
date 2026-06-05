@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript test</title>
+    <!-- 외부 스크립트 연결 -->
+    <script src="./01_ex.js"></script>
+</head>
+<body>
+    <hr>
+    <!-- html요소의 속성으로 js 함수를 사용하는 모습을 인라인 스크립트라고 부른다. -->
+    <button onclick="aaa()">눌러주세요</button>
+
+    <!-- 내부스크립트 작성 -->
+    <script>
+        // 이 영역 안에서는 js 언어의 문법체계를 따라감
+        document.write('<hr>')
+        document.write('내부스크립트 입니다.');
+    </script>
+</body>
+</html>
