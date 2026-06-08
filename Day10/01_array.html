@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <!-- 내부스트립트 작성 -->
+
+    <script>
+        // 이 스크립트 안에서는 js 언어의 문법체계를 따른다.
+        // 배열 array 여러개의 데이터를 하나의 변수로 관리하기 위한 문법 (자료구조)
+        // 파이썬 과는 달리 리스트 튜플딕셔너리 등으로 구분되어 있지 않고 모두 배열로 관리된다.
+        // JS 에서 배열을 만드는 2가지 방법
+        // 1. 리터럴 배열
+
+        var aaa = [10,20,30,];
+        document.write(aaa + '<br>'); // 배열의 요소 값들을 , 구분으로 문자 열로 줌 
+        document.write(aaa[0] + '<br>')
+        document.write(aaa[1] + '<br>')
+        document.write(aaa[2] + '<br>')
+        document.write("<hr>")
+
+        var bbb = [10, "sam", true]
+        document.write(bbb[0] + '<br>')
+        document.write(bbb[1] + '<br>')
+        document.write(bbb[2] + '<br>')
+        // 배열의 요소 갯수 확인 가능 
+        document.write('요소 갯수' + bbb.length +'<br>')
+
+        // 파이썬의 리스트 처럼 새로운 요소를 추가 할 수 있음(새로운 인덱스번호 사이의 요소는 자동생성시킴)
+        bbb[5] = 100
+        document.write('요소 갯수' + bbb.length +'<br>')
+        document.write(bbb[0] + '<br>')
+        document.write(bbb[1] + '<br>')
+        document.write(bbb[2] + '<br>')
+        document.write(bbb[3] + '<br>')
+        document.write(bbb[4] + '<br>')
+        document.write(bbb[5] + '<br>')
+        document.write('<br>')
+
+        // 요소의 값들을 반복문으로 접근하기.
+
+        for (var n = 0; n<bbb.length; n++){
+            document.write(bbb[n] + '<br>')
+        }
+        document.write('<hr>')
+        // 2. array 객체 생성자 함수 
+        var ccc = new Array(10,20,30);
+        for(var n= 0; n<ccc.length; n++){
+            document.write(ccc[n] + '<br>')
+        }
+        document.write("<hr>")
+
+
+        // 대량의 데이터 요소들을 순차적으로 접근할때.for in 문법 파이썬과는 다르게 index 번호가 반복됨
+        for (var index in ccc){
+            document.write(ccc[index] + '<br>')
+        }
+        // 빈 배열 객체를 생성한 후에 요소 값들을 축해도됨
+        ddd = new Array() ;
+        document.write("요소갯수 "  +  ddd.length + '<br>');
+
+        ddd[0] = 100;
+        ddd[1] = 'apple';
+        ddd[2] = 5>3;
+        ddd[3] = new Date();
+
+        for(var n = 0; n<ddd.length; n++){
+            document.write(ddd[n] + '<br>')
+        }
+        document.write("<hr>")
+        // ------------------------------------------
+
+
+
+        // 파이썬의 딕셔너리처럼 인덱스번호 대신에 ' 문자열' 키워드로 요소를 구별하는 배열이 존재한다.
+        // 이를 연관배열 이라 부름 
+
+        // 연관 배열 : 키-식별자 로 인덱스를 대신 하는 배열
+
+        var eee = new Array()
+        eee['name'] = 'sam';
+        eee['age'] = 20;
+        eee['address'] = 'seoul';
+
+        document.write('이름' + eee['name'] + '<br>');
+        document.write('이름' + eee['age'] + '<br>');
+        document.write('이름' + eee['address'] + '<br>');
+
+        // 리터럴 배열로도 연관배열 만들 수 있음 연관 배열은 그대로 출력 안해줌 
+        fff = []; //빈배열
+        fff['aaa'] = 1000;
+        fff['bbb'] = 2000;
+
+        document.write(fff['aaa'] + '<br>')
+        document.write(fff['bbb'] + '<br>')
+
+        document.write('<hr>')
+
+        // 2차원 배열 (1차원 배열을 여러개 가진 배열 )
+
+        var ggg = new Array(); // 빈 배열 
+        var a1 = [10,20,30]
+        var a2 = ['aa' , 'bb', 'cc'];
+        var a3 = [true , false , false, false];
+
+        ggg[0] = a1;
+        ggg[1] = a2;
+        ggg[2] = a3;
+
+        document.write(ggg[0] + '<br>')
+        document.write(ggg[0][0] + "<br>")
+        document.write(ggg[0][1] + "<br>")
+        document.write(ggg[0][2] + "<br>")
+
+        document.write('<br>')
+
+        document.write(ggg[1]+ "<br>");
+        document.write(ggg[1][0]+ "<br>");
+        document.write(ggg[1][1]+ "<br>");
+        document.write(ggg[1][2]+ "<br>");
+
+        document.write(ggg[2]+ '<br>')
+        for(var n=0; n<ggg[2].length; n++){
+            document.write(ggg[2][n] + '<br>')
+        }
+    </script>
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
