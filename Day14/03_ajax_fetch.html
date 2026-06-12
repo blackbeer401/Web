@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+    <script>
+        function aaa(){
+            //input 요소를 찾아와서 그 안에 써 있는 글씨를 얻어오기(서버로 보낼 글씨니깐.)  
+            var name =document.querySelector('#in1').value;
+            var password =document.querySelector('#in2').value;
+
+            //GET 방식으로 데이터를 보내기 위해 url 뒤에 값들을 추가한 경로 만들기
+            var url = './gettest.php?name=' + name + '&pw=' + password;
+            //JS 에 내장된 ajax 함수 = fetch 를 이용한 대체.
+            fetch(url).then( function(response){
+                //응답결과를 파라미터인 response 가 받는다.근데 이 데이터를 2진수로 가지고 있음.
+                //그래서 응답 결과를 글씨로 바꿔 달라고 요청하고 그 결과를 리턴
+                return response.text();
+            } ).then(function(text){
+                document.getElementById('result_area').innerHTML=text;              
+            })
+
+        };
+        function bbb(){
+            //POST 방식
+            var name = document.querySelector('#in1').value;
+            var password = document.querySelector('#in2').value;
+
+            // 보낼 데이터를 key = value 형태로만들기
+            var data =`name= ${name}&pw=${password}`;// 문자열 탬플릿 기능 
+            fetch('./posttest.php', {
+                method:'POST',
+                headers:{'Content-Type':'application/x-www-form-urlencoded; charset=utf-8'},
+                body: data,
+
+            }).then(function(response){
+                return response.text();
+            }).then(function(text){
+                document.getElementById('result_area').innerHTML=text;
+            })
+        };
+
+    </script>
+
+</head>
+<body>
+    <input type="text" placeholder="이름입력" id="in1">
+    <input type="text" placeholder="비밀번호 입력" id="in2">
+
+    <br>
+
+    <button onclick="aaa()" >GET 방식으로 데이터 전송 by fetch</button>
+    <button onclick="bbb()">POST 방식으로 데이터 전송 by fetch</button>
+
+
+    <hr>
+
+    <div id="result_area"></div>
+</body>
+</html>
