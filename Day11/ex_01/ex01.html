@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex</title>
+
+
+
+    </script>
+</head>
+<body>
+    <h2 id="space"></h2>
+
+        <script>
+        let count = prompt("전체 응모자 수를 입력하세요");
+
+        if(count === null){
+            alert("취소를 누르셨습니다.");
+        }else if(count === ""){
+            alert("입력값이 없습니다.");
+        }else if(isNaN(count)){
+            alert("문자열을 입력하셨습니다.");
+        }else if(count % 1 !== 0){
+            alert("소수를 입력하셨습니다.");
+        }else if(count <= 0){
+            alert("1 이상의 정수를 입력해주세요.");
+        }else{
+            let winner = Math.floor(Math.random() * count) + 1;
+            let space = document.getElementById("space");
+            space.innerHTML = `당첨자는 ${winner}번 입니다`;
+        }
+    </script>
+</body>
+</html>
