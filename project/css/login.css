@@ -1,0 +1,40 @@
+@import url(./common.css);
+
+.main_div_wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+        align-items: center;
+}
+.main_title{
+            
+     text-align: center;
+}
+.login_box{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    width: 20rem;        
+}
+.login_box input{
+    padding: 0.8rem;
+}
+.btn_login{
+    background-color: blue;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;            
+}
+.main_btn_signup{
+            text-align: center;
+}
+.main_btn_signup a{
+    text-decoration: none;
+    color: black;
+    padding: 0px 0.8rem;        
+}
+.main_btn_signup a:not(:last-child){
+            border-right: 1px solid gray;
+}                
