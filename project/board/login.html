@@ -10,19 +10,21 @@
 <body>
     <div class="main_div_wrap"> 
         <div class="main_title">
-            <h2>MBCA 학습 문의 게시판</h2>
-            <p>수강생들의 학습 질문과 정보를 공유하는 곳</p>
+            <h2><a href="../index.html">MBCA</a><br>학습 문의 게시판</h2>
+            <p>수강학생들의<br> 학습 질문과 정보를 공유하는 공간</p>
         </div>
-        <div class="login_box">
-            <input id="id_push" type="text" placeholder="아이디 입력">
-            <input id="password_push" type="password" placeholder="비밀번호 입력">
-            <button class="btn_login">로그인</button>
+        <form action="../board/board.html" class="login_box" method="post">
+            <input id="id_push" type="text" placeholder="아이디 입력" name="user_id">
+            <input id="password_push" type="password" placeholder="비밀번호 입력" name="user_pw">
+            <button class="btn_login" type="submit">로그인</button>
             
-        </div>
+
+        </form>
+        
         <div class="main_btn_signup">
             <a href="../board/signup.html" class="signup">회원가입</a>
-            <a href="./board/signuperror.html" class="signup">아이디 찾기</a> <!--기능구현준비중페이지로 이동-->
-            <a href="./board/signuperror.html" class="signup">비밀번호 찾기</a>
+            <a href="./signuperror.html" class="signup">아이디 찾기</a> <!--기능구현준비중페이지로 이동-->
+            <a href="./signuperror.html" class="signup">비밀번호 찾기</a>
             
         </div>
     </div>

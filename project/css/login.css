@@ -1,40 +1,74 @@
 @import url(./common.css);
 
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5f5f5;
+}
+
 .main_div_wrap{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-        align-items: center;
+    width:100%;
+    max-width:40rem;
+    padding:4rem 3rem;
+    background:white;
+    border-radius:1rem;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
+
 .main_title{
-            
-     text-align: center;
+    text-align:center;
+    margin-bottom:3rem;
 }
+
+.main_title h2{
+    font-size:2.8rem;
+    margin-bottom:1rem;
+}
+
 .login_box{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px;
-    width: 20rem;        
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
 }
+
 .login_box input{
-    padding: 0.8rem;
+    padding:1rem;
+    font-size:1.5rem;
+    border:1px solid #ccc;
+    border-radius:0.5rem;
 }
+
 .btn_login{
-    background-color: blue;
-    color: white;
-    width: 100%;
-    padding: 1rem;
-    border-radius: 10px;            
+    width:100%;
+    margin-top:2rem;
+    padding:1.2rem;
+
+    border:none;
+    border-radius:0.5rem;
+
+    background:#2563eb;
+    color:white;
+    font-size:1.6rem;
+    cursor:pointer;
 }
+
 .main_btn_signup{
-            text-align: center;
+    margin-top:2rem;
+    text-align:center;
 }
+
 .main_btn_signup a{
-    text-decoration: none;
-    color: black;
-    padding: 0px 0.8rem;        
+    color:#333;
+    padding:0 0.8rem;
+    font-size:1.4rem;
 }
+
 .main_btn_signup a:not(:last-child){
-            border-right: 1px solid gray;
-}                
+    border-right:1px solid #ccc;
+}
