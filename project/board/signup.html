@@ -16,28 +16,27 @@
             <p>수강학생들의<br> 학습 질문과 정보를 공유하는 공간</p>
         </div>
 
-        <div class="signup_inputbox">
-            <input id="user_id" type="text" placeholder="아이디">
-            <input id="user_pw" type="password" placeholder="비밀번호">
-            <input id="user_name" type="text" placeholder="이름">
-            <input id="nickname" type="text" placeholder="닉네임">
-            <input id="email" type="email" placeholder="이메일">
-            <input id="profile_img" type="file" accept="image/*">
-        </div>
-        <div class="signup_btnbox">
-            <button id="btn_signup_page">
-            가입하기
-            </button>
-            <a id="btn_cancel" href="./login.html">취소하기</a>
-            <!-- <button id="btn_cancel">
-            취소하기
-            </button> -->
-        </div>
+        <form class="signup_inputbox" action="../backend/signup.php" method="post" enctype="multipart/form-data">
+            <input id="user_id" type="text" placeholder="아이디" name="user_id">
+            <input id="user_pw" type="password" placeholder="비밀번호" name="user_pw">
+            <input id="user_name" type="text" placeholder="이름" name="user_name">
+            <input id="nickname" type="text" placeholder="닉네임" name="nickname">
+            <input id="email" type="email" placeholder="이메일" name="email">
+            <input id="profile_img" type="file" accept="image/*" name="profile_img">
+
+            <div class="signup_btnbox">
+                <button id="btn_signup_page" type="submit">
+                가입하기
+                </button>
+                <a id="btn_cancel" href="./login.html">취소하기</a>
+            </div>
+        </form>
+        
       
 
     </div>
 
-    <script src="../js/signup.js"></script>
+    <script src=""></script>
 
 </body>
 </html>
