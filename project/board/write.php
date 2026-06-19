@@ -18,11 +18,11 @@
             </nav>
         </header>
 
-        <form action="../backend/write.php" class="write_form" method="post" enctype="multipart/form-data">
+        <form action="../backend/write_ok.php" class="write_form" method="post" enctype="multipart/form-data">
 
             <div class="write_form_top">
                 <h2>글쓰기</h2>
-                <a href="./board.html">목록으로</a>
+                <a href="./board.php">목록으로</a>
             </div>
 
             <div class="form_group">

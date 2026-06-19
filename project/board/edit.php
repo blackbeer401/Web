@@ -1,9 +1,32 @@
+<?php
+    header('Content-Type:text/html; charset=utf-8');
+
+    $db = mysqli_connect('localhost','monster2026aix','a1s2d3f4!','monster2026aix');
+
+    mysqli_query($db, 'set names utf8');
+
+    $no = $_GET['no'];
+    
+    $sql = "SELECT* FROM mbca_board WHERE no='$no'";
+
+    $result = mysqli_query($db, $sql);
+
+    $row = mysqli_fetch_array($result);
+    
+    if(!$row){
+    echo "존재하지 않는 게시글입니다.";
+    exit;   
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>글쓰기</title>
+    <title>수정</title>
     <link rel="stylesheet" href="../css/write.css">
 </head>
 <body>
@@ -18,11 +41,13 @@
             </nav>
         </header>
 
-        <form action="../backend/write.php" class="write_form" method="post" enctype="multipart/form-data">
+        <form action="../backend/update.php" method="post" class="write_form" enctype="multipart/form-data">
+            <input type="hidden" name="no" value="<?php echo $row['no']; ?>">
+            <input type="hidden" name="old_img" value="<?php echo $row['board_img']; ?>">
 
             <div class="write_form_top">
-                <h2>글쓰기</h2>
-                <a href="./board.html">목록으로</a>
+                <h2>글수정</h2>
+                <a href="./board.php">목록으로</a>
             </div>
 
             <div class="form_group">
@@ -40,22 +65,25 @@
 
             <div class="form_group">
                 <p>제목</p>
-                <input type="text" placeholder="제목을 입력하세요" name="title">
+                <input type="text" name="title" value="<?php echo $row['title']; ?>">               
             </div>
 
             <div class="form_group">
                 <p>내용</p>
-                <textarea placeholder="내용을 입력하세요" name="content"></textarea>
+                <textarea name="content"><?php echo $row['content']; ?></textarea>
             </div>
 
             <div class="form_group">
                 <p>첨부이미지</p>
+                <?php if($row['board_img'] != ''){ ?>
+                <img src="../uploads/board/<?php echo $row['board_img']; ?>" alt="게시글 이미지">
+                <?php } ?>                
                 <input type="file" name="board_img">
             </div>
 
             <div class="write_btnbox">
-                <a href="./board.html">취소</a>
-                <button type="submit">저장</button>
+                <a href="./view.php?no=<?php echo $row['no']; ?>">취소</a>
+                <button type="submit">수정</button>
             </div>
 
         </form>

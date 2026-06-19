@@ -11,19 +11,26 @@
     $email = $_POST['email'];
     $profile_img = $_FILES['profile_img']['name'];
 
-move_uploaded_file(
-    $_FILES['profile_img']['tmp_name'],
-    "../uploads/profile/".$profile_img
-);
+    if($profile_img != ''){
+        move_uploaded_file(
+            $_FILES['profile_img']['tmp_name'],
+            "../uploads/profile/".$profile_img
+        );
+    }
 
-$sql = "INSERT INTO mbca_user
-        (user_id, user_pw, user_name, nickname, email, profile_img)
-        VALUES
-        ('$user_id', '$user_pw', '$user_name', '$nickname', '$email', '$profile_img')";
+    $sql = "INSERT INTO mbca_user
+            (user_id, user_pw, user_name, nickname, email, profile_img)
+            VALUES
+            ('$user_id', '$user_pw', '$user_name', '$nickname', '$email', '$profile_img')";
     $result = mysqli_query($db, $sql);
 
     if($result){
-        echo "회원가입 성공";
+        header("Location:../board/login.html");
     }else{
-        echo "회원가입 실패";
+        echo "<script>
+        alert('회원가입에 실패했습니다.'); 
+        history.back();
+        </script>";
     }
+
+?>
