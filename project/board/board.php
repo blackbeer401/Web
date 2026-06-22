@@ -16,9 +16,18 @@
     $db = mysqli_connect('localhost','monster2026aix','a1s2d3f4!','monster2026aix');
     mysqli_query($db, 'set names utf8');
 
-    $sql = "SELECT *
-            FROM mbca_board
-            ORDER BY no DESC";
+    $keyword = $_GET['keyword'] ?? '';
+
+    if($keyword == ''){
+        $sql = "SELECT *
+                FROM mbca_board
+                ORDER BY no DESC";
+    }else{
+        $sql = "SELECT *
+                FROM mbca_board
+                WHERE title LIKE '%$keyword%'
+                ORDER BY no DESC";
+    }
 
     $result = mysqli_query($db, $sql);
 
@@ -41,7 +50,7 @@
 
             <nav class="main_nav">
                 <span><?php echo $_SESSION['user_id'].'님 환영합니다'; ?></span>
-                <a href="./mypage.html">MY</a>
+                <a href="./mypage.php">MY</a>
                 <a href="../backend/logout.php">로그아웃</a>
             </nav>
         </header>
@@ -62,23 +71,24 @@
             <button>기타</button>
         </section>
 
-        <section class="search_box">
-            <select>
-                <option>제목</option>
-                <option>작성자</option>
-                <option>카테고리</option>
-            </select>
+            <form class="search_box" action="./board.php" method="get">
+                <select>
+                    <option>제목</option>
+                </select>
 
-            <input type="text" placeholder="검색어를 입력하세요">
+                <input type="text" name="keyword" placeholder="검색어를 입력하세요" value="<?php echo $keyword; ?>">
 
-            <button>검색</button>
-        </section>
+                <button type="submit">검색</button>
+            </form>
 
         <section class="board_area">
             <h2>등록된 질문</h2>
 
            <ul class="board_list">
-             <?php while($row = mysqli_fetch_array($result)){ ?>
+                <?php if(mysqli_num_rows($result) == 0){ ?>
+                    <li> <h2>검색 결과가 없습니다.</h2></li>
+                <?php } ?>
+                <?php while($row = mysqli_fetch_array($result)){ ?>
                     <li> 
                         <a href="./view.php?no=<?php echo $row['no']; ?>">
                             <span class="no">No.<?php echo $row['no']; ?></span>

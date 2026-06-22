@@ -26,7 +26,15 @@ body{
 
 .main_nav{
     display:flex;
+    align-items:center;
     gap:1rem;
+}
+
+.main_nav span{
+    padding:0.8rem 1.2rem;
+    border-radius:0.5rem;
+    font-size:1.4rem;
+    color:#555;
 }
 
 .main_nav a{
