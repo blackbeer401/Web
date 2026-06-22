@@ -1,5 +1,17 @@
 <?php
+    session_start();
+
     header('Content-Type:text/html; charset=utf-8');
+
+    if(!isset($_SESSION['user_no'])){
+        echo "
+        <script>
+            alert('로그인이 필요합니다.');
+            location.href='../index.html';
+        </script>
+        ";
+        exit;
+    }
 
     $db = mysqli_connect('localhost','monster2026aix','a1s2d3f4!','monster2026aix');
 
@@ -7,18 +19,26 @@
 
     $no = $_GET['no'];
     
-    $sql = "SELECT* FROM mbca_board WHERE no='$no'";
+    $sql = "SELECT * FROM mbca_board WHERE no='$no'";
 
     $result = mysqli_query($db, $sql);
 
     $row = mysqli_fetch_array($result);
     
     if(!$row){
-    echo "존재하지 않는 게시글입니다.";
-    exit;   
+        echo "존재하지 않는 게시글입니다.";
+        exit;   
     }
 
-
+    if($_SESSION['user_no'] != $row['user_no']){
+        echo "
+        <script>
+            alert('수정 권한이 없습니다.');
+            location.href='./board.php';
+        </script>
+        ";
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +57,7 @@
 
             <nav class="main_nav">
                 <a href="./mypage.html">MY</a>
-                <a href="../index.html">로그아웃</a>
+                <a href="../backend/logout.php">로그아웃</a>
             </nav>
         </header>
 

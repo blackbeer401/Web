@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['user_no'])){
+    echo "
+    <script>
+        alert('로그인이 필요합니다.');
+        location.href='../index.html';
+    </script>
+    ";
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,7 +28,7 @@
 
             <nav class="main_nav">
                 <a href="./mypage.html">MY</a>
-                <a href="../index.html">로그아웃</a>
+                <a href="../backend/logout.php">로그아웃</a>
             </nav>
         </header>
 
@@ -54,7 +68,7 @@
             </div>
 
             <div class="write_btnbox">
-                <a href="./board.html">취소</a>
+                <a href="./board.php">취소</a>
                 <button type="submit">저장</button>
             </div>
 

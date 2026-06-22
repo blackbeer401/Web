@@ -3,6 +3,15 @@
     session_start();
 
     header('Content-Type:text/html; charset=utf-8');
+    
+    if(!isset($_SESSION['user_no'])){
+        echo "
+            <script>
+            alert('로그인이 필요합니다.');
+            location.href='../index.html';
+                </script>";
+            exit;
+            }    
 
     $db = mysqli_connect('localhost','monster2026aix','a1s2d3f4!','monster2026aix');
     mysqli_query($db, 'set names utf8');
@@ -33,7 +42,7 @@
             <nav class="main_nav">
                 <span><?php echo $_SESSION['user_id'].'님 환영합니다'; ?></span>
                 <a href="./mypage.html">MY</a>
-                <a href="../index.html">로그아웃</a>
+                <a href="../backend/logout.php">로그아웃</a>
             </nav>
         </header>
 
