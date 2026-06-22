@@ -171,4 +171,55 @@ body{
 
 .done{
     background:#d1e7dd;
+    
+}
+.main_header h1 br{
+    display:none;
+}
+.hit{
+    color:#888;
+    font-size:1.3rem;
+    white-space:nowrap;
+}
+@media screen and (max-width:480px){
+
+    .board_list a{
+        flex-wrap:wrap;
+        align-items:flex-start;
+    }
+
+    .board_list strong{
+        width:100%;
+        flex:none;
+        margin-top:0.5rem;
+    }
+
+    .status{
+        margin-top:0.5rem;
+    }
+
+    .category{
+        width:auto;
+    }
+     .main_header h1{
+        text-align:center;
+        line-height:1.4;
+    }
+
+    .main_nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .main_nav span{
+        width:100%;
+        text-align:center;
+    }
+
+    .main_nav a{
+        white-space:nowrap;
+    }
+    .main_header h1 br{
+        display:block;
+    }
 }

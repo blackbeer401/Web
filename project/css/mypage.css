@@ -125,6 +125,7 @@ header p{
 
 .my_board_list li{
     border-bottom:1px solid #ddd;
+    font-size: 1.3rem;
 }
 
 .my_board_list li:last-child{

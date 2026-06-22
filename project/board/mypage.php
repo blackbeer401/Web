@@ -43,8 +43,8 @@
 <body>
     <div class="main_wrap">
         <header>
-            <h2>프로필 수정 페이지</h2>
-            <p>프로필 사진을 등록하고 닉네임을 설정하세요</p>
+            <h2>MY PAGE</h2>
+            <p>프로필 사진을 등록하고<br> 닉네임을 설정하세요</p>
 
         </header>
         <form class="profile_form" action="../backend/profile_update.php" method="post" enctype="multipart/form-data">

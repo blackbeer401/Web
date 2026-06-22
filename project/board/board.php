@@ -49,7 +49,10 @@
     <div class="main_wrap">
 
         <header class="main_header">
-            <h1>MBCA 학습 문의 게시판</h1>
+            <h1>MBCA<br> 
+            <span>학습 문의 게시판</span>
+            </h1>
+            
 
             <nav class="main_nav">
                 <span><?php echo $_SESSION['user_id'].'님 환영합니다'; ?></span>
@@ -99,7 +102,9 @@
                             <span class="no">No.<?php echo $row['no']; ?></span>
                             <span class="category"><?php echo $row['category']; ?></span>
                             <strong><?php echo $row['title']; ?></strong>
-                            <span class="status waiting"><?php echo $row['status']; ?></span>
+                            <!-- <span class="status waiting"><?php echo $row['status']; ?></span> -->
+                            <span class="hit">조회수 <?php echo $row['hits']; ?></span>
+                            
                         </a>
                     </li>
                 <?php } ?>

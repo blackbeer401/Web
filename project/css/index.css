@@ -12,7 +12,7 @@ body{
             rgba(0,0,0,0.6),
             rgba(0,0,0,0.6)
         ),
-        url(../source/index_img.jpg)
+        url(../source/index_img.png)
         center/cover no-repeat;
 }
 
@@ -63,4 +63,33 @@ body{
 }
 span {
     font-size: 4.5rem;
+}
+.main_wrap span{
+    font-size:4.5rem;
+}
+
+@media screen and (max-width:480px){
+
+    body{
+        align-items:flex-start;
+        padding-top:8rem;
+        background-position:65% center;
+
+    }
+
+    .main_wrap{
+        padding:2rem;
+    }
+
+    .main_wrap h2{
+        font-size:2.4rem;
+    }
+
+    .main_wrap span{
+        font-size:3.6rem;
+    }
+
+    .main_wrap a{
+        font-size:1.5rem;
+    }
 }

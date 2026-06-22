@@ -29,7 +29,7 @@ if(!isset($_SESSION['user_no'])){
             <h1>MBCA 학습 문의 게시판</h1>
 
             <nav class="main_nav">
-                <a href="./mypage.html">MY</a>
+                <a href="./mypage.php">MY</a>
                 <a href="../backend/logout.php">로그아웃</a>
             </nav>
         </header>

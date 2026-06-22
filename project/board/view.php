@@ -19,6 +19,9 @@
     mysqli_query($db, 'set names utf8');
 
     $no = $_GET['no'];
+
+    $hit_sql = "UPDATE mbca_board SET hits = hits + 1 WHERE no='$no'";
+    mysqli_query($db, $hit_sql);
     
     $sql = "SELECT* FROM mbca_board WHERE no='$no'";
 
@@ -49,7 +52,7 @@
             <h2>상세글 보기</h2>
 
             <nav class="main_nav">
-                <a href="./mypage.html">MY</a>
+                <a href="./mypage.php">MY</a>
                 <a href="../backend/logout.php">로그아웃</a>
             </nav>
         </header>
@@ -64,6 +67,7 @@
             <div class="view_name_date">
                 <p>작성자 : <?php echo $row['user_no'];?></p>
                 <p>작성일 : <?php echo $row['time'];?></p>
+                <p>조회수 : <?php echo $row['hits'];?></p>
             </div>
 
             <div class="view_title">
