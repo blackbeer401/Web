@@ -84,7 +84,7 @@ body{
     margin-bottom:2rem;
 }
 
-.category_box button{
+.category_box a{
     padding:0.8rem 1.4rem;
 
     background:white;

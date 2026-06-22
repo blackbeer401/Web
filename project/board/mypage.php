@@ -23,6 +23,12 @@
 
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result);
+
+    $my_sql = "SELECT * FROM mbca_board WHERE user_no='$user_no' ORDER BY no DESC";
+
+    $my_result = mysqli_query($db, $my_sql);
+
+
 ?>
 
 
@@ -52,6 +58,25 @@
                 <a class="cancel" href="./board.php">취소</a>    
             </div>
         </form>
+        <section class="my_board_area">
+            <h3>내가 작성한 질문</h3>
+
+            <ul class="my_board_list">
+                <?php if(mysqli_num_rows($my_result) == 0){ ?>
+                    <li>작성한 질문이 없습니다.</li>
+                <?php } ?>
+
+                <?php while($my_row = mysqli_fetch_array($my_result)){ ?>
+                    <li>
+                        <a href="./view.php?no=<?php echo $my_row['no']; ?>">
+                            <span>No.<?php echo $my_row['no']; ?></span>
+                            <strong><?php echo $my_row['title']; ?></strong>
+                            <em><?php echo $my_row['category']; ?></em>
+                        </a>
+                    </li>
+                <?php } ?>
+            </ul>
+        </section>
     </div>
 
 </body>

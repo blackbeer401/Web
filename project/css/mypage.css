@@ -109,3 +109,47 @@ header p{
 .profile_img_box{
     cursor:pointer;
 }
+.my_board_area{
+    margin-top:2rem;
+    padding:2rem;
+
+    background:white;
+    border-radius:1rem;
+}
+
+.my_board_area h3{
+    font-size:1.8rem;
+    margin-bottom:1.5rem;
+    text-align:center;
+}
+
+.my_board_list li{
+    border-bottom:1px solid #ddd;
+}
+
+.my_board_list li:last-child{
+    border-bottom:none;
+}
+
+.my_board_list a{
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+
+    padding:1.2rem 0;
+}
+
+.my_board_list span{
+    font-size:1.2rem;
+    color:#888;
+}
+
+.my_board_list strong{
+    font-size:1.4rem;
+}
+
+.my_board_list em{
+    font-style:normal;
+    font-size:1.2rem;
+    color:#555;
+}

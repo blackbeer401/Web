@@ -22,8 +22,7 @@
 
     if($_FILES['profile_img']['name'] == ''){
 
-        $sql = "UPDATE mbca_user
-                SET nickname='$nickname'
+        $sql = "UPDATE mbca_user SET nickname='$nickname'
                 WHERE no='$user_no'";
 
     }else{
@@ -33,9 +32,7 @@
 
         move_uploaded_file($tmp_name, "../uploads/".$profile_img);
 
-        $sql = "UPDATE mbca_user
-                SET nickname='$nickname',
-                    profile_img='$profile_img'
+        $sql = "UPDATE mbca_user SET nickname='$nickname', profile_img='$profile_img'
                 WHERE no='$user_no'";
     }
 

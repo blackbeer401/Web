@@ -17,19 +17,22 @@
     mysqli_query($db, 'set names utf8');
 
     $keyword = $_GET['keyword'] ?? '';
+    $category = $_GET['category'] ?? '';
 
-    if($keyword == ''){
-        $sql = "SELECT *
-                FROM mbca_board
-                ORDER BY no DESC";
+    if($keyword == '' && $category == ''){
+        $sql = "SELECT * FROM mbca_board ORDER BY no DESC";
+
+    }else if($keyword != '' && $category == ''){
+        $sql = "SELECT * FROM mbca_board WHERE title LIKE '%$keyword%' ORDER BY no DESC";
+
+    }else if($keyword == '' && $category != ''){
+        $sql = "SELECT * FROM mbca_board WHERE category='$category' ORDER BY no DESC";
+
     }else{
-        $sql = "SELECT *
-                FROM mbca_board
-                WHERE title LIKE '%$keyword%'
-                ORDER BY no DESC";
+        $sql = "SELECT * FROM mbca_board WHERE title LIKE '%$keyword%' AND category='$category' ORDER BY no DESC";
     }
 
-    $result = mysqli_query($db, $sql);
+        $result = mysqli_query($db, $sql);
 
 ?>
 
@@ -62,16 +65,18 @@
         </section>
 
         <section class="category_box">
-            <button>전체</button>
-            <button>HTML/CSS</button>
-            <button>JavaScript</button>
-            <button>PHP</button>
-            <button>DB</button>
-            <button>Git</button>
-            <button>기타</button>
+            <a href="./board.php">전체</a>
+            <a href="./board.php?category=html_css">HTML/CSS</a>
+            <a href="./board.php?category=javascript">JavaScript</a>
+            <a href="./board.php?category=php">PHP</a>
+            <a href="./board.php?category=db">DB</a>
+            <a href="./board.php?category=git">Git</a>
+            <a href="./board.php?category=etc">기타</a>
         </section>
 
             <form class="search_box" action="./board.php" method="get">
+                <input type="hidden" name="category" value="<?php echo $category; ?>">
+
                 <select>
                     <option>제목</option>
                 </select>
